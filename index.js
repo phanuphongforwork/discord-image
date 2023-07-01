@@ -21,8 +21,8 @@ bot.on("ready", () => {
 bot.on("messageCreate", async (message) => {
   if (message.author.bot) return; // Ignore messages from other bots
 
-  if (message.content.startsWith(process.env.IMAGE_PREFIX || "!image")) {
-    const command = message.content.slice(7).trim(); // Extract the command from the message content, excluding the prefix
+  if (message.content.startsWith(process.env.IMAGE_PREFIX || "!")) {
+    const command = message.content.slice(1).trim(); // Extract the command from the message content, excluding the prefix
 
     const { data: mediaData, error } = await supabase
       .from("media")
