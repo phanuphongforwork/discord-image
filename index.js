@@ -49,5 +49,3 @@ bot.on("messageCreate", async (message) => {
 });
 
 bot.login(process.env.BOT_TOKEN);
-
-module.exports = bot;
