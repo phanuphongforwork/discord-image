@@ -2,18 +2,6 @@ const { Client, GatewayIntentBits } = require("discord.js");
 const { createClient } = require("@supabase/supabase-js");
 require("dotenv").config();
 
-const express = require("express");
-const app = express();
-const port = process.env.PORT || 3000;
-
-app.get("/", (req, res) => {
-  res.send("Hello, Discord bot!");
-});
-
-app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}`);
-});
-
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
 
@@ -62,4 +50,4 @@ bot.on("messageCreate", async (message) => {
 
 bot.login(process.env.BOT_TOKEN);
 
-module.exports = app;
+module.exports = bot;
